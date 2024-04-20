@@ -1,0 +1,16 @@
+node_modules
+environments
+.angular/cache
+dist
+yarn-error.log
+npm-debug.log
+Thumbs.db
+out-tsc
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+

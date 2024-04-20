@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tracker</title>
+</head>
+<body>
+<div>
+    
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+     
+    <label for="emailid">Email id: </label>
+    <input type="text" id="emailid" formControlName="emailid" placeholder="Enter your email ID">
+    
+    
+    <br>
+
+    <br>
+
+    <label for="city" >City: </label>
+    <input type="text" id="city" formControlName="city" placeholder="Enter your city you want to track">
+
+    <br>
+    
+    <br>
+    <button type="submit" >Submit</button>
+
+    </form>
+
+
+    </div>
+
+    <div>
+
+        <p>Email: {{ this.myForm.controls['emailid'].value}}</p>
+
+        <p>City: {{ this.myForm.controls['city'].value}}</p>
+
+    </div> 
+    
+    <div *ngIf = 'this.cityName!=null then Data else noData'>
+
+    </div>
+    <ng-template #Data> Weather is {{this.weatherData}} degree Celcius in {{this.cityName}}</ng-template>
+
+    <ng-template #noData> Please enter valid City Name</ng-template>
+
+
+    
+</body>
+</html>
